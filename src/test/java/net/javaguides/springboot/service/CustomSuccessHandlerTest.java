@@ -18,6 +18,12 @@ public class CustomSuccessHandlerTest {
     @InjectMocks
     private CustomSuccessHandler customSuccessHandler;
 
+    /**
+     * Tests the onAuthenticationSuccess method of CustomSuccessHandler when redirecting to the home page.
+     *
+     * @throws IOException      if an input or output exception occurred.
+     * @throws ServletException if the request could not be handled.
+     */
     @Test
     public void testOnAuthenticationSuccess_RedirectToHomePage() throws IOException, ServletException {
         HttpServletRequest request = null;  // You can create a mock request if needed

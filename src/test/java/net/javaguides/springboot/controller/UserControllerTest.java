@@ -58,12 +58,18 @@ public class UserControllerTest {
         when(principal.getName()).thenReturn("john.doe@example.com");
     }
 
+    /**
+     * Tests the getRegistrationPage method of UserController.
+     */
     @Test
     public void testGetRegistrationPage() {
         String viewName = userController.getRegistrationPage(userDto);
         assertEquals("registration-form", viewName);
     }
 
+    /**
+     * Tests the saveUser method of UserController.
+     */
     @Test
     public void testSaveUser() {
         String viewName = userController.saveUser(userDto, model);
@@ -72,12 +78,18 @@ public class UserControllerTest {
         verify(model, times(1)).addAttribute("message", "Registered Successfully!");
     }
 
+    /**
+     * Tests the login method of UserController.
+     */
     @Test
     public void testLogin() {
         String viewName = userController.login();
         assertEquals("login", viewName);
     }
 
+    /**
+     * Tests the userPage method of UserController.
+     */
     @Test
     public void testUserPage() {
         UserDetails userDetails = new User("john.doe@example.com", "password", new ArrayList<>());
@@ -91,6 +103,9 @@ public class UserControllerTest {
         verify(model, times(1)).addAttribute("listUsers", userList);
     }
 
+    /**
+     * Tests the adminPage method of UserController.
+     */
     @Test
     public void testAdminPage() {
         UserDetails userDetails = new User("john.doe@example.com", "password", new ArrayList<>());
@@ -102,6 +117,9 @@ public class UserControllerTest {
         verify(model, times(1)).addAttribute("user", userDetails);
     }
 
+    /**
+     * Tests the userProfile method of UserController.
+     */
     @Test
     public void testUserProfile() {
         SecurityContextHolder.getContext().setAuthentication(authentication);
