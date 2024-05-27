@@ -17,7 +17,7 @@
                             <div class="col-12">
                                 <div class="mb-5">
                                     <div class="text-center mb-4">
-                                        <h1>Chlenix</h1>
+                                        <h1>StockParket</h1>
                                     </div>
                                     <h2 class="h4 text-center">Registration</h2>
                                     <h3 class="fs-6 fw-normal text-secondary text-center m-0">Enter your details to register</h3>
@@ -39,6 +39,12 @@
                                     <div class="form-floating mb-3">
                                         <input th:field="*{email}" type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
                                         <label for="email" class="form-label">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input th:field="*{phoneNumber}" type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Phone number" required>
+                                        <label for="phoneNumber" class="form-label">Phone number</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -72,32 +78,26 @@
                                         <label for="userName" class="form-label">Username</label>
                                     </div>
                                 </div>
-                                <!-- End of new input fields -->
+                                <!-- Gender select field -->
                                 <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
-                                        <label class="form-check-label text-secondary" for="iAgree">
-                                            I agree to the <a href="#" class="link-primary text-decoration-none">terms and conditions</a>
-                                        </label>
+                                    <div class="form-floating mb-3">
+                                        <select th:field="*{gender}" class="form-control" id="gender" required>
+                                            <option value="" disabled selected>Select Gender</option>
+                                            <option value="MALE">Male</option>
+                                            <option value="FEMALE">Female</option>
+                                        </select>
+                                        <label for="gender" class="form-label">Gender</label>
                                     </div>
                                 </div>
+                                <!-- End of new input fields -->
                                 <div class="col-12">
-                                    <div class="d-grid">
-                                        <button class="btn bsb-btn-xl btn-primary" type="submit">Sign up</button>
-                                    </div>
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Register</button>
                                 </div>
                             </div>
                         </form>
                         <div class="row">
-                            <div class="col-12">
-                                <hr class="mt-5 mb-4 border-secondary-subtle">
-                                <p class="m-0 text-secondary text-center">Already have an account? <a th:href="@{/login}" class="link-primary text-decoration-none">Sign in</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <hr class="mt-4 mb-3 border-secondary-subtle">
-                                <p class="m-0 text-secondary text-center"><small>&copy;2023-2024 &#183; BSB &#183; All rights reserved.</small></p>
+                            <div class="col-12 text-center mt-4">
+                                <p class="mb-0">Already have an account? <a href="#" th:href="@{/login}">Log in</a>.</p>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,7 @@
 package net.javaguides.springboot.dto;
 
+import net.javaguides.springboot.model.Gender;
+
 public class UserDto {
 
     private String fullname;
@@ -11,6 +13,16 @@ public class UserDto {
     private String lastname;
     private double money;
     private String userName;
+
+    private int phoneNumber;
+    private Gender gender;
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     // Getters and setters for all fields
     public String getFullname() {
@@ -67,5 +79,12 @@ public class UserDto {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }

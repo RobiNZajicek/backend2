@@ -18,11 +18,32 @@ public class User {
     private int money;
     private String userName;
 
+    private int phoneNumber;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public User() {
         super();
     }
+    public Gender getGender() {
+        return gender;
+    }
 
-    public User(String email, String password, String role, String fullname, String name, String lastname, int money, String userName) {
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+
+    public User(String email, String password, String role, String fullname, String name, String lastname, int money, String userName,int phoneNumber) {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -31,6 +52,7 @@ public class User {
         this.lastname = lastname;
         this.money = money;
         this.userName = userName;
+        this.phoneNumber= phoneNumber;
     }
 
     public Long getId() {

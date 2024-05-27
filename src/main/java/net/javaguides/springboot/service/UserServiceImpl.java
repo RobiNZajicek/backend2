@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(UserDto userDto) {
+
         User user = new User();
         user.setFullname(userDto.getFullname());
         user.setEmail(userDto.getEmail());
@@ -29,6 +30,8 @@ public class UserServiceImpl implements UserService {
         user.setLastname(userDto.getLastname());
         user.setMoney((int) userDto.getMoney());
         user.setUserName(userDto.getUserName());
+        user.setPhoneNumber(userDto.getPhoneNumber());
+        user.setGender(userDto.getGender());
         user.setRole("USER"); // Set default role or based on logic
         userRepository.save(user);
     }
@@ -45,6 +48,8 @@ public class UserServiceImpl implements UserService {
             userDto.setLastname(user.getLastname());
             userDto.setMoney(user.getMoney());
             userDto.setUserName(user.getUserName());
+            userDto.setPhoneNumber(user.getPhoneNumber());
+            userDto.setGender(user.getGender());
             return userDto;
         }
         return null;
@@ -60,6 +65,8 @@ public class UserServiceImpl implements UserService {
             userDto.setLastname(user.getLastname());
             userDto.setMoney(user.getMoney());
             userDto.setUserName(user.getUserName());
+            userDto.setPhoneNumber(user.getPhoneNumber());
+            userDto.setGender(user.getGender());
             return userDto;
         }).collect(Collectors.toList());
     }
