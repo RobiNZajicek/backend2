@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of UserService interface.
+ */
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -19,9 +22,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    /**
+     * Saves a new user.
+     *
+     * @param userDto The user DTO containing user information to be saved.
+     */
     @Override
     public void save(UserDto userDto) {
-
         User user = new User();
         user.setFullname(userDto.getFullname());
         user.setEmail(userDto.getEmail());
@@ -36,6 +43,12 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
+    /**
+     * Retrieves a user DTO by email.
+     *
+     * @param email The email of the user to retrieve.
+     * @return UserDto object containing user details.
+     */
     @Override
     public UserDto getUserByEmail(String email) {
         User user = userRepository.findByEmail(email);
@@ -55,6 +68,11 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    /**
+     * Retrieves a list of all users.
+     *
+     * @return List of UserDto objects representing all users.
+     */
     @Override
     public List<UserDto> getAllUsers() {
         return userRepository.findAll().stream().map(user -> {
