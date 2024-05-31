@@ -83,7 +83,15 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+<!--	<build>-->
+<!--		<plugins>-->
+<!--			<plugin>-->
+<!--				<groupId>org.springframework.boot</groupId>-->
+<!--				<artifactId>spring-boot-starter-parent</artifactId>-->
+<!--				-->
+<!--			</plugin>-->
+<!--		</plugins>-->
+<!--	</build>-->
 	<build>
 		<plugins>
 			<plugin>

@@ -51,7 +51,7 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
                 response.sendRedirect("/admin-page");
             } else if (roles.orElse("").equals("USER")) {
                 // Example redirect after successful registration
-                response.sendRedirect("http://localhost:5173/?fullname=" + fullname
+                response.sendRedirect("https://stcoks2-2-iowy.vercel.app/?fullname=" + fullname
                         + "&email=" + email
                         + "&name=" + name
                         + "&lastname=" + lastname

@@ -30,9 +30,6 @@ public class CustomUserDetailsServiceTest {
         user.setEmail("john.doe@example.com");
     }
 
-    /**
-     * Tests the loadUserByUsername method of CustomUserDetailsService when the user is found.
-     */
     @Test
     public void testLoadUserByUsername_UserFound() {
         when(userRepository.findByEmail("john.doe@example.com")).thenReturn(user);
@@ -43,9 +40,6 @@ public class CustomUserDetailsServiceTest {
         verify(userRepository, times(1)).findByEmail("john.doe@example.com");
     }
 
-    /**
-     * Tests the loadUserByUsername method of CustomUserDetailsService when the user is not found.
-     */
     @Test
     public void testLoadUserByUsername_UserNotFound() {
         when(userRepository.findByEmail("john.doe@example.com")).thenReturn(null);

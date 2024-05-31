@@ -2,16 +2,38 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>User Registration</title>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/registrations/registration-7/assets/css/registration-7.css">
+    <style>
+        body {
+            background-color: #e9f2fb;
+        }
+        .card {
+            background-color: #f7fbff;
+            border-color: #d1e9ff;
+        }
+        .btn-primary {
+            background-color: #1a75ff;
+            border-color: #1a75ff;
+        }
+        .btn-primary:hover {
+            background-color: #145cb3;
+            border-color: #145cb3;
+        }
+        .form-floating .form-label {
+            color: #1a75ff;
+        }
+        h1, h2, h3 {
+            color: #1a75ff;
+        }
+    </style>
 </head>
 <body>
-<section class="bg-light p-3 p-md-4 p-xl-5">
+<section class="p-3 p-md-4 p-xl-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
-                <div class="card border border-light-subtle rounded-4">
+                <div class="card border rounded-4">
                     <div class="card-body p-3 p-md-4 p-xl-5">
                         <div class="row">
                             <div class="col-12">
@@ -19,8 +41,8 @@
                                     <div class="text-center mb-4">
                                         <h1>StockParket</h1>
                                     </div>
-                                    <h2 class="h4 text-center">Registration</h2>
-                                    <h3 class="fs-6 fw-normal text-secondary text-center m-0">Enter your details to register</h3>
+                                    <h2 class="h4 text-center">Sign Up</h2>
+                                    <h3 class="fs-6 fw-normal text-secondary text-center m-0">Fill in your details to create an account</h3>
                                 </div>
                             </div>
                         </div>
@@ -31,20 +53,20 @@
                             <div class="row gy-3 overflow-hidden">
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <input th:field="*{fullname}" type="text" class="form-control" name="fullname" id="fullname" placeholder="Fullname" required>
-                                        <label for="fullname" class="form-label">Fullname</label>
+                                        <input th:field="*{fullname}" type="text" class="form-control" name="fullname" id="fullname" placeholder="Full Name" required>
+                                        <label for="fullname" class="form-label">Full Name</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <input th:field="*{email}" type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-                                        <label for="email" class="form-label">Email</label>
+                                        <input th:field="*{email}" type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
+                                        <label for="email" class="form-label">Email Address</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <input th:field="*{phoneNumber}" type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Phone number" required>
-                                        <label for="phoneNumber" class="form-label">Phone number</label>
+                                        <input th:field="*{phoneNumber}" type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required>
+                                        <label for="phoneNumber" class="form-label">Phone Number</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -56,20 +78,20 @@
                                 <!-- New input fields -->
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <input th:field="*{name}" type="text" class="form-control" name="name" id="name" placeholder="Name" required>
-                                        <label for="name" class="form-label">Name</label>
+                                        <input th:field="*{name}" type="text" class="form-control" name="name" id="name" placeholder="First Name" required>
+                                        <label for="name" class="form-label">First Name</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <input th:field="*{lastname}" type="text" class="form-control" name="lastname" id="lastname" placeholder="Lastname" required>
-                                        <label for="lastname" class="form-label">Lastname</label>
+                                        <input th:field="*{lastname}" type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name" required>
+                                        <label for="lastname" class="form-label">Last Name</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <input th:field="*{money}" type="number" class="form-control" name="money" id="money" placeholder="Money" required>
-                                        <label for="money" class="form-label">Money</label>
+                                        <input th:field="*{money}" type="number" class="form-control" name="money" id="money" placeholder="Initial Balance" required>
+                                        <label for="money" class="form-label">Initial Balance</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -97,7 +119,7 @@
                         </form>
                         <div class="row">
                             <div class="col-12 text-center mt-4">
-                                <p class="mb-0">Already have an account? <a href="#" th:href="@{/login}">Log in</a>.</p>
+                                <p class="mb-0">Already have an account? <a href="#" th:href="@{/login}">Log in here</a>.</p>
                             </div>
                         </div>
                     </div>
